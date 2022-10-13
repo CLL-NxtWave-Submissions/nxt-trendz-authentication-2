@@ -1,4 +1,5 @@
 import {Component} from 'react'
+import Cookie from 'js-cookie'
 
 import './index.css'
 
@@ -18,7 +19,8 @@ class LoginForm extends Component {
     this.setState({password: event.target.value})
   }
 
-  onSubmitSuccess = () => {
+  onSubmitSuccess = jwtToken => {
+    Cookie.set('jwtToken', jwtToken, {expiry: 30})
     const {history} = this.props
 
     history.replace('/')
@@ -40,7 +42,7 @@ class LoginForm extends Component {
     const response = await fetch(url, options)
     const data = await response.json()
     if (response.ok === true) {
-      this.onSubmitSuccess()
+      this.onSubmitSuccess(data.jwt_token)
     } else {
       this.onSubmitFailure(data.error_msg)
     }
