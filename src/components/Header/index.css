@@ -3,6 +3,10 @@
   justify-content: space-around;
 }
 
+.nav-menu-item-link {
+  text-decoration: none;
+}
+
 @media screen and (max-width: 767px) {
   .nav-header {
     flex-direction: column;
