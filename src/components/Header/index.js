@@ -1,3 +1,5 @@
+import {Link} from 'react-router-dom'
+
 import './index.css'
 
 const Header = () => (
@@ -26,11 +28,17 @@ const Header = () => (
           alt="website logo"
         />
         <ul className="nav-menu">
-          <li className="nav-menu-item">Home</li>
+          <Link className="nav-menu-item-link" to="/">
+            <li className="nav-menu-item">Home</li>
+          </Link>
 
-          <li className="nav-menu-item">Products</li>
+          <Link className="nav-menu-item-link" to="/products">
+            <li className="nav-menu-item">Products</li>
+          </Link>
 
-          <li className="nav-menu-item">Cart</li>
+          <Link className="nav-menu-item-link" to="/cart">
+            <li className="nav-menu-item">Cart</li>
+          </Link>
         </ul>
         <button type="button" className="logout-desktop-btn">
           Logout
@@ -39,29 +47,35 @@ const Header = () => (
     </div>
     <div className="nav-menu-mobile">
       <ul className="nav-menu-list-mobile">
-        <li className="nav-menu-item-mobile">
-          <img
-            src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-home-icon.png"
-            alt="nav home"
-            className="nav-bar-img"
-          />
-        </li>
+        <Link className="nav-menu-item-link" to="/">
+          <li className="nav-menu-item-mobile">
+            <img
+              src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-home-icon.png"
+              alt="nav home"
+              className="nav-bar-img"
+            />
+          </li>
+        </Link>
 
-        <li className="nav-menu-item-mobile">
-          <img
-            src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-products-icon.png"
-            alt="nav products"
-            className="nav-bar-img"
-          />
-        </li>
+        <Link className="nav-menu-item-link" to="/products">
+          <li className="nav-menu-item-mobile">
+            <img
+              src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-products-icon.png"
+              alt="nav products"
+              className="nav-bar-img"
+            />
+          </li>
+        </Link>
 
-        <li className="nav-menu-item-mobile">
-          <img
-            src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-cart-icon.png"
-            alt="nav cart"
-            className="nav-bar-img"
-          />
-        </li>
+        <Link className="nav-menu-item-link" to="/cart">
+          <li className="nav-menu-item-mobile">
+            <img
+              src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-cart-icon.png"
+              alt="nav cart"
+              className="nav-bar-img"
+            />
+          </li>
+        </Link>
       </ul>
     </div>
   </nav>
