@@ -1,17 +1,27 @@
+import {Redirect} from 'react-router-dom'
+import Cookie from 'js-cookie'
 import Header from '../Header'
 import './index.css'
 
-const Cart = () => (
-  <>
-    <Header />
-    <div className="cart-bg-container">
-      <img
-        className="cart-main-img"
-        src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-cart-img.png"
-        alt="cart"
-      />
-    </div>
-  </>
-)
+const Cart = () => {
+  const jwtTokenValue = Cookie.get('jwtToken')
+
+  if (jwtTokenValue === undefined) {
+    return <Redirect to="/login" />
+  }
+
+  return (
+    <>
+      <Header />
+      <div className="cart-bg-container">
+        <img
+          className="cart-main-img"
+          src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-cart-img.png"
+          alt="cart"
+        />
+      </div>
+    </>
+  )
+}
 
 export default Cart
