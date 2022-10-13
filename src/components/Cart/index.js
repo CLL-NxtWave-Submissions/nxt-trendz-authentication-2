@@ -4,7 +4,7 @@ import Header from '../Header'
 import './index.css'
 
 const Cart = () => {
-  const jwtTokenValue = Cookie.get('jwtToken')
+  const jwtTokenValue = Cookie.get('jwt_token')
 
   if (jwtTokenValue === undefined) {
     return <Redirect to="/login" />

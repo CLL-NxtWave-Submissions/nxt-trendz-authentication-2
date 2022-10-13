@@ -21,7 +21,7 @@ class LoginForm extends Component {
   }
 
   onSubmitSuccess = jwtToken => {
-    Cookie.set('jwtToken', jwtToken, {expires: 30})
+    Cookie.set('jwt_token', jwtToken, {expires: 30})
     const {history} = this.props
 
     history.replace('/')
@@ -90,7 +90,7 @@ class LoginForm extends Component {
   }
 
   render() {
-    const jwtTokenValue = Cookie.get('jwtToken')
+    const jwtTokenValue = Cookie.get('jwt_token')
 
     if (jwtTokenValue !== undefined) {
       return <Redirect to="/" />
