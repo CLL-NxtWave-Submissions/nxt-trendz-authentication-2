@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 
 import './index.css'
 
@@ -80,4 +80,4 @@ const Header = () => (
     </div>
   </nav>
 )
-export default Header
+export default withRouter(Header)
