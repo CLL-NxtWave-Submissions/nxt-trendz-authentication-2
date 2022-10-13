@@ -1,1 +1,17 @@
-/* Write your CSS code here */
+.cart-bg-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  height: 100%;
+}
+
+.cart-main-img {
+  width: 50vw;
+}
+
+@media (min-width: 768px) {
+  .cart-main-img {
+    width: 30vw;
+  }
+}

@@ -1,1 +1,17 @@
-/* Write your CSS code here */
+.products-bg-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  height: 100%;
+}
+
+.products-main-img {
+  width: 50vw;
+}
+
+@media (min-width: 768px) {
+  .products-main-img {
+    width: 30vw;
+  }
+}
